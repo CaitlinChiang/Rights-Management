@@ -1,16 +1,15 @@
-import { useState, useEffect } from "react";
-import Card from "@mui/material/Card";
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Table from "examples/Tables/Table";
-import Checkbox from "@mui/material/Checkbox";
+import { useState, useEffect } from "react"
+import { Card, Checkbox } from "@mui/material"
+import Layout from "../../components/Layout"
+import Navbar from "../../components/Navbar"
+import SoftBox from "../../components/SoftBox"
+import SoftTypography from "../../components/SoftTypography"
+import Table from "../../components/Table"
 
 // Data
-import { testRequests } from "./requestsTestData";
+import { testRequests } from "./testData"
 
-function Requests() {
+function RequestsTable() {
   const [data, setData] = useState([]) 
 
   useEffect(() => {
@@ -34,8 +33,9 @@ function Requests() {
   })
 
   return (
-    <DashboardLayout>
-      <DashboardNavbar />
+    <Layout>
+      <Navbar />
+
       <SoftBox py={3}>
         <Card>
           <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
@@ -55,8 +55,8 @@ function Requests() {
           </SoftBox>
         </Card>
       </SoftBox>
-    </DashboardLayout>
+    </Layout>
   );
 }
 
-export default Requests;
+export default RequestsTable
