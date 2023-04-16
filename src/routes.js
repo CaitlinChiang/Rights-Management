@@ -2,8 +2,6 @@ import Home from 'layouts/home'
 import Requests from "layouts/requests"
 // import SignIn from "layouts/authentication/sign-in"
 // import SignUp from "layouts/authentication/sign-up"
-import Tribe from 'layouts/tribe'
-import TribeMore from 'layouts/tribe/more'
 import ResearchersApply from 'layouts/researchers'
 import EditTribeInfo from 'layouts/researchers/editTribeInfo'
 import ResearcherProfile from 'layouts/researchers/profile'
@@ -18,53 +16,40 @@ import Document from "examples/Icons/Document";
 import CustomerSupport from "examples/Icons/CustomerSupport";
 import Cube from "examples/Icons/Cube";
 
+const user = {
+  permission: 'LOCAL_MEMBER', // LOCAL_MEMBER, RESEARCHER, PUBLIC_USER, ADMIN
+}
+
 const routes = [
-  { type: "title", title: "Account Pages", key: "account-pages" },
-  {
-    type: "collapse",
-    name: "Researcher",
-    key: "researcher",
-    route: "/researcher",
-    icon: <CustomerSupport size="12px" />,
-    component: <ResearcherProfile />,
-    noCollapse: true,
-  },
-  { type: "title", title: "Navigation", key: "account-pages" },
   {
     type: "collapse",
     name: "Home",
     key: "home",
     route: "/home",
-    icon: <Cube size="12px" />,
+    icon: <Office size="12px" />,
     component: <Home />,
     noCollapse: true,
+    permission: ['LOCAL_MEMBER', 'RESEARCHER', 'PUBLIC_USER', 'ADMIN']
   },
   {
     type: "collapse",
-    name: "Add",
-    key: "add",
-    route: "/add",
-    icon: <Cube size="12px" />,
+    name: "Researcher",
+    key: "researcher",
+    route: "/researcher",
+    icon: <Settings size="12px" />,
+    component: <ResearcherProfile />,
+    noCollapse: true,
+    permissions: ['LOCAL_MEMBER', 'RESEARCHER']
+  },
+  {
+    type: "collapse",
+    name: "Tribe",
+    key: "tribe",
+    route: "/tribe",
+    icon: <Document size="12px" />,
     component: <AddTribe />,
     noCollapse: true,
-  },
-  {
-    type: "collapse",
-    name: "About",
-    key: "about",
-    route: "/tribe/about",
-    icon: <Cube size="12px" />,
-    component: <Tribe />,
-    noCollapse: true,
-  },
-  {
-    type: "collapse",
-    name: "More",
-    key: "more",
-    route: "/tribe/more",
-    icon: <Cube size="12px" />,
-    component: <TribeMore />,
-    noCollapse: true,
+    permissions: ['ADMIN']
   },
   {
     type: "collapse",
@@ -103,5 +88,9 @@ const routes = [
     noCollapse: true,
   }
 ]
+
+// const renderedRoutes = routes?.map((e) => {
+  
+// })
 
 export default routes
