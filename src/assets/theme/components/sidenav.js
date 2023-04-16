@@ -27,13 +27,13 @@ const { borderRadius } = borders;
 const sidenav = {
   styleOverrides: {
     root: {
-      width: pxToRem(250),
+      width: pxToRem(180),
       whiteSpace: "nowrap",
       border: "none",
     },
 
     paper: {
-      width: pxToRem(250),
+      width: pxToRem(180),
       backgroundColor: rgba(white.main, 0.8),
       backdropFilter: `saturate(200%) blur(${pxToRem(30)})`,
       height: `calc(100vh - ${pxToRem(32)})`,
