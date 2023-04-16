@@ -5,7 +5,7 @@ import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
 import SoftButton from "components/SoftButton";
 
-function TribeAbout({ image, title, description, researcher, action }) {
+function TribeAbout({ image, title, description, researcher, action, viewOnly }) {
   return (
     <Card>
       <SoftBox display="flex" justifyContent="space-between" alignItems="center" pt={3} px={2}>
@@ -48,18 +48,20 @@ function TribeAbout({ image, title, description, researcher, action }) {
             {'Assigned Researcher: ' + researcher}
           </SoftTypography>
 
-          <SoftButton
-            sx={{ mt: 3 }}
-            component="a"
-            href={action?.route}
-            target="_blank"
-            rel="noreferrer"
-            variant="outlined"
-            size="small"
-            color={action?.color}
-          >
-            {action?.label}
-          </SoftButton>
+          {!viewOnly && (
+            <SoftButton
+              sx={{ mt: 3 }}
+              component="a"
+              href={action?.route}
+              target="_blank"
+              rel="noreferrer"
+              variant="outlined"
+              size="small"
+              color={action?.color}
+            >
+              {action?.label}
+            </SoftButton>
+          )}
         </SoftBox>
       </SoftBox>
     </Card>
@@ -86,7 +88,8 @@ TribeAbout.propTypes = {
       "white",
     ]).isRequired,
     label: PropTypes.string.isRequired,
-  }).isRequired
+  }).isRequired,
+  viewOnly: PropTypes.bool
 };
 
 export default TribeAbout;

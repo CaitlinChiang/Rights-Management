@@ -1,6 +1,6 @@
 export const userTestData = {
   access: 'public',
-  locked: false
+  locked: true
 }
 
 export const testMoreData = {

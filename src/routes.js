@@ -6,6 +6,7 @@ import SignUp from "layouts/authentication/sign-up"
 import Tribe from 'layouts/tribe'
 import TribeMore from 'layouts/tribe/more'
 import ResearchersApply from 'layouts/researchers'
+import EditTribeInfo from 'layouts/researchers/editTribeInfo'
 
 // Soft UI Dashboard React icons
 import Shop from "examples/Icons/Shop";
@@ -52,6 +53,15 @@ const routes = [
     route: "/researchers/apply",
     icon: <Cube size="12px" />,
     component: <ResearchersApply />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Edit Info",
+    key: "edit",
+    route: "/researchers/editInfo",
+    icon: <Cube size="12px" />,
+    component: <EditTribeInfo />,
     noCollapse: true,
   },
   {
