@@ -1,6 +1,8 @@
 import TribeCards from './layouts/communities/cards'
 import CreateCommunity from './layouts/communities/create'
 import UpdateCommunityInformation from './layouts/communities/update'
+import CommunityMoreInformation from './layouts/communities/moreInformation'
+import CommunityLockedInformation from './layouts/communities/lockedInformation'
 import ResearcherProfile from './layouts/researchers/profile'
 import CreateResearcher from './layouts/researchers/create'
 import RequestsTable from "./layouts/requests"
@@ -30,23 +32,43 @@ const routes = [
   },
   {
     type: "collapse",
+    name: "Know More 1",
+    key: "home",
+    route: "/community/about",
+    icon: <Office size="12px" />,
+    component: <CommunityMoreInformation />,
+    noCollapse: true,
+    permission: ['LOCAL_MEMBER', 'RESEARCHER', 'PUBLIC_USER', 'ADMIN']
+  },
+  {
+    type: "collapse",
+    name: "Know More 2",
+    key: "home",
+    route: "/community/lockedInformation",
+    icon: <Office size="12px" />,
+    component: <CommunityLockedInformation />,
+    noCollapse: true,
+    permission: ['LOCAL_MEMBER', 'RESEARCHER', 'PUBLIC_USER', 'ADMIN']
+  },
+  {
+    type: "collapse",
     name: "Researcher",
     key: "researcher",
     route: "/researcher",
     icon: <Settings size="12px" />,
     component: <ResearcherProfile />,
     noCollapse: true,
-    permissions: ['LOCAL_MEMBER', 'RESEARCHER']
+    permission: ['LOCAL_MEMBER', 'RESEARCHER']
   },
   {
     type: "collapse",
-    name: "+ Community",
+    name: "Community",
     key: "community",
     route: "/community",
     icon: <Document size="12px" />,
     component: <CreateCommunity />,
     noCollapse: true,
-    permissions: ['ADMIN']
+    permission: ['ADMIN']
   },
   {
     type: "collapse",
@@ -56,6 +78,7 @@ const routes = [
     icon: <Document size="12px" />,
     component: <CreateResearcher />,
     noCollapse: true,
+    permission: ['LOCAL_MEMBER', 'PUBLIC_USER']
   },
   {
     type: "collapse",
@@ -65,6 +88,7 @@ const routes = [
     icon: <Cube size="12px" />,
     component: <UpdateCommunityInformation />,
     noCollapse: true,
+    permission: ['LOCAL_MEMBER', 'RESEARCHER']
   },
   {
     type: "collapse",
@@ -74,6 +98,7 @@ const routes = [
     icon: <CustomerSupport size="12px" />,
     component: <RequestsTable />,
     noCollapse: true,
+    permission: ['LOCAL_MEMBER', 'RESEARCHER']
   },
   {
     type: "collapse",
@@ -83,11 +108,10 @@ const routes = [
     icon: <CustomerSupport size="12px" />,
     component: <ResearchersTable />,
     noCollapse: true,
+    permission: ['ADMIN']
   }
-]
-
-// const renderedRoutes = routes?.map((e) => {
-  
-// })
+].filter(obj => {
+  return Array.isArray(obj.permission) && obj.permission.includes(user?.permission)
+})
 
 export default routes

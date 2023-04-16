@@ -8,7 +8,7 @@ import { useSoftUIController, setMiniSidenav } from "context"
 
 export default function App() {
   const [controller, dispatch] = useSoftUIController();
-  const { miniSidenav, direction, layout, sidenavColor } = controller;
+  const { miniSidenav, direction, sidenavColor } = controller;
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   const { pathname } = useLocation();
 
@@ -35,19 +35,6 @@ export default function App() {
     document.scrollingElement.scrollTop = 0;
   }, [pathname]);
 
-  const getRoutes = (allRoutes) =>
-    allRoutes.map((route) => {
-      if (route.collapse) {
-        return getRoutes(route.collapse);
-      }
-
-      if (route.route) {
-        return <Route exact path={route.route} element={route.component} key={route.key} />;
-      }
-
-      return null;
-    });
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -59,7 +46,9 @@ export default function App() {
         onMouseLeave={handleOnMouseLeave}
       />
       <Routes>
-        {getRoutes(routes)}
+        {routes.map((route) => {
+          return <Route exact path={route.route} element={route.component} key={route.key} />;
+        })}
         <Route path="*" element={<Navigate to="/home" />} />
       </Routes>
     </ThemeProvider>

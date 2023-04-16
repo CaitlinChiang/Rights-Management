@@ -23,7 +23,6 @@ function CommunityAbout(community) {
             objectPosition: "center"
           }}
         />
-        <ImageUploader file={file} setFile={setFile} />
       </SoftBox>
 
       <SoftBox pt={3} pb={2} px={2}>
