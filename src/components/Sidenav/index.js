@@ -1,18 +1,16 @@
-import { useEffect } from "react";
-import { useLocation, NavLink } from "react-router-dom";
-import PropTypes from "prop-types";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
-import Link from "@mui/material/Link";
-import Icon from "@mui/material/Icon";
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
-import SoftButton from "components/SoftButton";
-import SidenavCollapse from "examples/Sidenav/SidenavCollapse";
-import SidenavCard from "examples/Sidenav/SidenavCard";
-import SidenavRoot from "examples/Sidenav/SidenavRoot";
-import sidenavLogoLabel from "examples/Sidenav/styles/sidenav";
-import { useSoftUIController, setMiniSidenav } from "context";
+import { useEffect } from "react"
+import { useLocation, NavLink } from "react-router-dom"
+import PropTypes from "prop-types"
+import List from "@mui/material/List"
+import Divider from "@mui/material/Divider"
+import Link from "@mui/material/Link"
+import Icon from "@mui/material/Icon"
+import SoftBox from "../SoftBox"
+import SoftTypography from "../SoftTypography"
+import SidenavCollapse from "./SidenavCollapse"
+import SidenavRoot from "./SidenavRoot"
+import sidenavLogoLabel from "./styles/sidenav"
+import { useSoftUIController, setMiniSidenav } from "context"
 
 function Sidenav({ color, brand, brandName, routes, ...rest }) {
   const [controller, dispatch] = useSoftUIController();

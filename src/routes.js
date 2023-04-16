@@ -1,18 +1,17 @@
 import TribeCards from './layouts/communities/cards'
 import CreateCommunity from './layouts/communities/create'
 import UpdateCommunityInformation from './layouts/communities/update'
-import ResearcherProfile from 'layouts/researchers/profile'
+import ResearcherProfile from './layouts/researchers/profile'
 import CreateResearcher from './layouts/researchers/create'
-import RequestsTable from "layouts/requests"
-import ResearchersTable from 'layouts/researchers/applicants'
+import RequestsTable from "./layouts/requests"
+import ResearchersTable from './layouts/researchers/applicants'
 // import SignIn from "layouts/authentication/sign-in"
 // import SignUp from "layouts/authentication/sign-up"
-
-import Office from "examples/Icons/Office"
-import Settings from "examples/Icons/Settings"
-import Document from "examples/Icons/Document"
-import CustomerSupport from "examples/Icons/CustomerSupport"
-import Cube from "examples/Icons/Cube"
+import Office from "./components/Icons/Office"
+import Settings from "./components/Icons/Settings"
+import Document from "./components/Icons/Document"
+import CustomerSupport from "./components/Icons/CustomerSupport"
+import Cube from "./components/Icons/Cube"
 
 const user = {
   permission: 'LOCAL_MEMBER', // LOCAL_MEMBER, RESEARCHER, PUBLIC_USER, ADMIN

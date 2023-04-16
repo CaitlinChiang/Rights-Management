@@ -1,9 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import App from "App";
+import React from "react"
+import ReactDOM from "react-dom"
+import { BrowserRouter } from "react-router-dom"
+import App from "App"
 
-import { SoftUIControllerProvider } from "context";
+import { SoftUIControllerProvider } from "context"
 
 ReactDOM.render(
   <BrowserRouter>
@@ -12,4 +12,4 @@ ReactDOM.render(
     </SoftUIControllerProvider>
   </BrowserRouter>,
   document.getElementById("root")
-);
+)
