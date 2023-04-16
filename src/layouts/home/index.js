@@ -2,7 +2,7 @@ import Grid from "@mui/material/Grid";
 import SoftBox from "components/SoftBox"
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import DefaultProjectCard from "examples/Cards/ProjectCards/DefaultProjectCard";
+import TribeCard from './TribeCard'
 
 // Data
 import { testTribesData } from "./testTribes";
@@ -17,7 +17,7 @@ function Dashboard() {
           {testTribesData?.map((tribe, index) => {
             return (
               <Grid item xs={12} md={6} xl={3} key={index}>
-                <DefaultProjectCard
+                <TribeCard
                   image={tribe?.image}
                   title={tribe?.title}
                   description={tribe?.description}
@@ -26,10 +26,6 @@ function Dashboard() {
               </Grid>
             )
           })}
-          <Grid item xs={12} md={6} xl={3}>
-          </Grid>
-          <Grid item xs={12} md={6} xl={3}>
-          </Grid>
         </Grid>
       </SoftBox>
     </DashboardLayout>

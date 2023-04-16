@@ -5,7 +5,7 @@ export const testTribesData = [
     description: 'Located At: Location',
     action: {
       type: "internal",
-      route: "/pages/profile/profile-overview",
+      route: 'tribe/about',
       color: "info",
       label: "know more"
     }
@@ -16,7 +16,7 @@ export const testTribesData = [
     description: 'Located At: Location',
     action: {
       type: "internal",
-      route: "/pages/profile/profile-overview",
+      route: 'tribe/about',
       color: "info",
       label: "know more"
     }
@@ -27,7 +27,7 @@ export const testTribesData = [
     description: 'Located At: Location',
     action: {
       type: "internal",
-      route: "/pages/profile/profile-overview",
+      route: 'tribe/about',
       color: "info",
       label: "know more"
     }
@@ -38,7 +38,7 @@ export const testTribesData = [
     description: 'Located At: Location',
     action: {
       type: "internal",
-      route: "/pages/profile/profile-overview",
+      route: 'tribe/about',
       color: "info",
       label: "know more"
     }
@@ -49,7 +49,7 @@ export const testTribesData = [
     description: 'Located At: Location',
     action: {
       type: "internal",
-      route: "/pages/profile/profile-overview",
+      route: 'tribe/about',
       color: "info",
       label: "know more"
     }
@@ -60,7 +60,7 @@ export const testTribesData = [
     description: 'Located At: Location',
     action: {
       type: "internal",
-      route: "/pages/profile/profile-overview",
+      route: 'tribe/about',
       color: "info",
       label: "know more"
     }
@@ -71,7 +71,7 @@ export const testTribesData = [
     description: 'Located At: Location',
     action: {
       type: "internal",
-      route: "/pages/profile/profile-overview",
+      route: 'tribe/about',
       color: "info",
       label: "know more"
     }
@@ -82,7 +82,7 @@ export const testTribesData = [
     description: 'Located At: Location',
     action: {
       type: "internal",
-      route: "/pages/profile/profile-overview",
+      route: 'tribe/about',
       color: "info",
       label: "know more"
     }
