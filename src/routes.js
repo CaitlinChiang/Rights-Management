@@ -1,11 +1,11 @@
 import TribeCards from './layouts/tribe/cards'
+import CreateTribe from './layouts/tribe/create'
 // import Requests from "layouts/requests"
 // import SignIn from "layouts/authentication/sign-in"
 // import SignUp from "layouts/authentication/sign-up"
 // import ResearchersApply from 'layouts/researchers'
 // import EditTribeInfo from 'layouts/researchers/editTribeInfo'
 // import ResearcherProfile from 'layouts/researchers/profile'
-// import AddTribe from 'layouts/tribe/addTribe'
 // import ResearchApplicants from 'layouts/researchers/applicants'
 
 // Soft UI Dashboard React icons
@@ -41,16 +41,16 @@ const routes = [
   //   noCollapse: true,
   //   permissions: ['LOCAL_MEMBER', 'RESEARCHER']
   // },
-  // {
-  //   type: "collapse",
-  //   name: "Tribe",
-  //   key: "tribe",
-  //   route: "/tribe",
-  //   icon: <Document size="12px" />,
-  //   component: <AddTribe />,
-  //   noCollapse: true,
-  //   permissions: ['ADMIN']
-  // },
+  {
+    type: "collapse",
+    name: "Tribe",
+    key: "tribe",
+    route: "/tribe",
+    icon: <Document size="12px" />,
+    component: <CreateTribe />,
+    noCollapse: true,
+    permissions: ['ADMIN']
+  },
   // {
   //   type: "collapse",
   //   name: "Apply",

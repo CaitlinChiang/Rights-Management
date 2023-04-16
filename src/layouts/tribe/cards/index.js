@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material"
-import DashboardLayout from "../../../components/DashboardLayout"
-import DashboardNavbar from "../../../components/DashboardNavbar"
+import DashboardLayout from "../../../components/Layout"
+import DashboardNavbar from "../../../components/Navbar"
 import SoftBox from "../../../components/SoftBox"
 import TribeCard from './TribeCard'
 

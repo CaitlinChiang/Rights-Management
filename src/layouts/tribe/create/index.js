@@ -1,15 +1,14 @@
 import { useState } from "react";
-import Card from '@mui/material/Card'
-import Grid from "@mui/material/Grid";
-import SoftBox from "components/SoftBox";
-import SoftInput from "components/SoftInput";
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import SoftTypography from "components/SoftTypography";
-import SoftButton from "components/SoftButton";
-import ImageUploader from "components/ImageUploader";
+import { Card, Grid } from "@mui/material"
+import DashboardLayout from "../../../components/Layout"
+import DashboardNavbar from "../../../components/Navbar"
+import SoftBox from "../../../components/SoftBox"
+import SoftInput from "../../../components/SoftInput"
+import SoftTypography from "../../../components/SoftTypography"
+import SoftButton from "../../../components/SoftButton"
+import ImageUploader from "../../../components/ImageUploader"
 
-function AddTribe() {
+function CreateTribe() {
   const [name, setName] = useState('')
   const [location, setLocation] = useState('')
   const [file, setFile] = useState(null)
@@ -32,7 +31,11 @@ function AddTribe() {
                 </SoftTypography>
               </Grid>
               <Grid item xs={12} md={10}>
-                <SoftInput value={name} onChange={(e) => setName(e.target.value)} placeholder={'Enter the name of the community.'} />
+                <SoftInput 
+                  value={name} 
+                  onChange={(e) => setName(e.target.value)} 
+                  placeholder={'Enter the name of the community.'} 
+                />
               </Grid>
             </Grid>
 
@@ -59,4 +62,4 @@ function AddTribe() {
   );
 }
 
-export default AddTribe;
+export default CreateTribe
