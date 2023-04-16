@@ -1,4 +1,5 @@
 import Dashboard from "layouts/dashboard"
+import Home from 'layouts/home'
 import Tables from "layouts/tables"
 import Billing from "layouts/billing"
 import Profile from "layouts/profile"
@@ -16,6 +17,15 @@ import CreditCard from "examples/Icons/CreditCard";
 import Cube from "examples/Icons/Cube";
 
 const routes = [
+  {
+    type: "collapse",
+    name: "Home",
+    key: "home",
+    route: "/home",
+    icon: <Cube size="12px" />,
+    component: <Home />,
+    noCollapse: true,
+  },
   {
     type: "collapse",
     name: "Dashboard",

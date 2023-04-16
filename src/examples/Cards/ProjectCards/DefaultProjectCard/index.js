@@ -72,42 +72,20 @@ function DefaultProjectCard({ image, label, title, description, action, authors 
             boxShadow: ({ boxShadows: { md } }) => md,
             objectFit: "cover",
             objectPosition: "center",
+
           }}
         />
       </SoftBox>
-      <SoftBox pt={3} px={0.5}>
+      <SoftBox px={0.5} p={2}>
         <SoftBox mb={1}>
           <SoftTypography
-            variant="button"
-            fontWeight="regular"
+            component={Link}
+            to={action.route}
+            variant="h5"
             textTransform="capitalize"
-            textGradient
           >
-            {label}
+            {title}
           </SoftTypography>
-        </SoftBox>
-        <SoftBox mb={1}>
-          {action.type === "internal" ? (
-            <SoftTypography
-              component={Link}
-              to={action.route}
-              variant="h5"
-              textTransform="capitalize"
-            >
-              {title}
-            </SoftTypography>
-          ) : (
-            <SoftTypography
-              component="a"
-              href={action.route}
-              target="_blank"
-              rel="noreferrer"
-              variant="h5"
-              textTransform="capitalize"
-            >
-              {title}
-            </SoftTypography>
-          )}
         </SoftBox>
         <SoftBox mb={3} lineHeight={0}>
           <SoftTypography variant="button" fontWeight="regular" color="text">
