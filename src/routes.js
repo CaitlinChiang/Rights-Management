@@ -1,5 +1,5 @@
-import TribeCards from './layouts/tribe/cards'
-import CreateTribe from './layouts/tribe/create'
+import TribeCards from './layouts/communities/cards'
+import CreateTribe from './layouts/communities/create'
 // import Requests from "layouts/requests"
 // import SignIn from "layouts/authentication/sign-in"
 // import SignUp from "layouts/authentication/sign-up"
@@ -7,8 +7,6 @@ import CreateTribe from './layouts/tribe/create'
 // import EditTribeInfo from 'layouts/researchers/editTribeInfo'
 // import ResearcherProfile from 'layouts/researchers/profile'
 // import ResearchApplicants from 'layouts/researchers/applicants'
-import CommunityLockedInformation from 'layouts/tribe/lockedInformation';
-import CommunityMoreInformation from 'layouts/tribe/moreInformation';
 
 // Soft UI Dashboard React icons
 import Shop from "examples/Icons/Shop";
@@ -43,16 +41,16 @@ const routes = [
   //   noCollapse: true,
   //   permissions: ['LOCAL_MEMBER', 'RESEARCHER']
   // },
-  {
-    type: "collapse",
-    name: "Test",
-    key: "test",
-    route: "/test",
-    icon: <Document size="12px" />,
-    component: <CommunityMoreInformation />,
-    noCollapse: true,
-    permissions: ['ADMIN']
-  },
+  // {
+  //   type: "collapse",
+  //   name: "Test",
+  //   key: "test",
+  //   route: "/test",
+  //   icon: <Document size="12px" />,
+  //   component: <CommunityMoreInformation />,
+  //   noCollapse: true,
+  //   permissions: ['ADMIN']
+  // },
   {
     type: "collapse",
     name: "Tribe",
