@@ -7,6 +7,8 @@ import TribeMore from 'layouts/tribe/more'
 import ResearchersApply from 'layouts/researchers'
 import EditTribeInfo from 'layouts/researchers/editTribeInfo'
 import ResearcherProfile from 'layouts/researchers/profile'
+import AddTribe from 'layouts/tribe/addTribe'
+import ResearchApplicants from 'layouts/researchers/applicants'
 
 // Soft UI Dashboard React icons
 import Shop from "examples/Icons/Shop";
@@ -15,7 +17,6 @@ import Settings from "examples/Icons/Settings";
 import Document from "examples/Icons/Document";
 import CustomerSupport from "examples/Icons/CustomerSupport";
 import Cube from "examples/Icons/Cube";
-import AddTribe from 'layouts/tribe/addTribe'
 
 const routes = [
   { type: "title", title: "Account Pages", key: "account-pages" },
@@ -90,6 +91,15 @@ const routes = [
     route: "/requests",
     icon: <CustomerSupport size="12px" />,
     component: <Requests />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Researchers",
+    key: "researchers",
+    route: "/researchers",
+    icon: <CustomerSupport size="12px" />,
+    component: <ResearchApplicants />,
     noCollapse: true,
   }
 ]

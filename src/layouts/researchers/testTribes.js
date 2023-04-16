@@ -45,3 +45,36 @@ export const researcherAboutData = {
   purpose: 'Aims to be involved in the community and want to be knowledgeable regarding these tribes.',
   response: 'Praesent maximus dapibus convallis. Suspendisse lacinia fringilla sapien, vitae euismod nulla finibus in. Donec blandit ligula at felis gravida, a porttitor purus placerat. Suspendisse potenti. Mauris purus mauris, lobortis vitae nunc vel, ultrices ullamcorper eros. Proin tincidunt, arcu at egestas bibendum, nisl erat consequat dolor, nec scelerisque dui dolor non lorem. Donec efficitur velit lacinia justo convallis laoreet. Nunc mollis eu ligula tristique tempus.'
 }
+
+export const testApplicants = [
+  {
+    approve: false,
+    interview: false,
+    name: 'Public User 1',
+    community: 'Test Tribe 1'
+  },
+  {
+    approve: false,
+    interview: false,
+    name: 'Public User 2',
+    community: 'Test Tribe 2'
+  },
+  {
+    approve: false,
+    interview: false,
+    name: 'Public User 3',
+    community: 'Test Tribe 3'
+  },
+  {
+    approve: false,
+    interview: false,
+    name: 'Public User 4',
+    community: 'Test Tribe 4'
+  },
+  {
+    approve: false,
+    interview: false,
+    name: 'Public User 5',
+    community: 'Test Tribe 5'
+  }
+]
