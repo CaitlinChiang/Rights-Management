@@ -33,7 +33,7 @@ const routes = [
   {
     type: "collapse",
     name: "Know More 1",
-    key: "home",
+    key: "knowMore1",
     route: "/community/about",
     icon: <Office size="12px" />,
     component: <CommunityMoreInformation />,
@@ -43,7 +43,7 @@ const routes = [
   {
     type: "collapse",
     name: "Know More 2",
-    key: "home",
+    key: "knowMore2",
     route: "/community/lockedInformation",
     icon: <Office size="12px" />,
     component: <CommunityLockedInformation />,
