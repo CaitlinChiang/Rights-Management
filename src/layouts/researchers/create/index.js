@@ -1,19 +1,16 @@
-import { useState } from "react";
-import Card from '@mui/material/Card'
-import Grid from "@mui/material/Grid";
-import SoftBox from "components/SoftBox";
-import SoftInput from "components/SoftInput";
-import Select from '@mui/material/Select'
-import MenuItem from '@mui/material/MenuItem'
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import SoftTypography from "components/SoftTypography";
-import SoftButton from "components/SoftButton";
+import { useState } from "react"
+import { Card, Grid, Select, MenuItem } from "@mui/material"
+import Layout from "../../../components/Layout"
+import Navbar from "../../../components/Navbar"
+import SoftBox from "../../../components/SoftBox"
+import SoftInput from "../../../components/SoftInput"
+import SoftTypography from "../../../components/SoftTypography"
+import SoftButton from "../../../components/SoftButton"
 
-//data 
-import { testTribes } from "./testTribes";
+// Data 
+import { testTribes } from "../testData";
 
-function ResearchersApply() {
+function CreateResearcher() {
   const [name, setName] = useState('')
   const [qualifications, setQualifications] = useState('')
   const [community, setCommunity] = useState({})
@@ -21,8 +18,8 @@ function ResearchersApply() {
   const [response, setResponse] = useState('')
 
   return (
-    <DashboardLayout>
-      <DashboardNavbar />
+    <Layout>
+      <Navbar />
 
       <SoftBox mt={4}>
         <Card sx={{ padding: 2 }}>
@@ -101,7 +98,6 @@ function ResearchersApply() {
             >
               {'In tincidunt eu mi id dignissim. Suspendisse potenti. Morbi porttitor ex lectus, at porttitor ante rhoncus in. Maecenas in massa justo. Vivamus lacus leo, dapibus vel felis non, pretium feugiat mauris. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin sit amet facilisis sem. Phasellus congue sem dignissim consequat volutpat. In euismod suscipit quam, ac ornare metus tincidunt quis.'}
             </SoftTypography>
-
             <SoftInput value={response} multiline onChange={(e) => setResponse(e.target.value)} placeholder={'Type response to the case study here.'} />
 
             <SoftButton variant="gradient" color="info" fullWidth sx={{ mt: 5 }}>
@@ -110,8 +106,8 @@ function ResearchersApply() {
           </SoftBox>
         </Card>
       </SoftBox>
-    </DashboardLayout>
-  );
+    </Layout>
+  )
 }
 
-export default ResearchersApply;
+export default CreateResearcher

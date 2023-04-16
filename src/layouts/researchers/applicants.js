@@ -8,7 +8,7 @@ import Table from "examples/Tables/Table";
 import Checkbox from "@mui/material/Checkbox";
 
 // Data
-import { testApplicants } from "./testTribes";
+import { testApplicants } from "./testData";
 
 function ResearchApplicants() {
   const [data, setData] = useState([]) 

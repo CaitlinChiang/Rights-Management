@@ -1,11 +1,11 @@
 import TribeCards from './layouts/communities/cards'
-import CreateTribe from './layouts/communities/create'
+import CreateCommunity from './layouts/communities/create'
+import UpdateCommunityInformation from './layouts/communities/update'
+import ResearcherProfile from 'layouts/researchers/profile'
+import CreateResearcher from './layouts/researchers/create'
 // import Requests from "layouts/requests"
 // import SignIn from "layouts/authentication/sign-in"
 // import SignUp from "layouts/authentication/sign-up"
-// import ResearchersApply from 'layouts/researchers'
-// import EditTribeInfo from 'layouts/researchers/editTribeInfo'
-// import ResearcherProfile from 'layouts/researchers/profile'
 // import ResearchApplicants from 'layouts/researchers/applicants'
 
 // Soft UI Dashboard React icons
@@ -31,16 +31,16 @@ const routes = [
     noCollapse: true,
     permission: ['LOCAL_MEMBER', 'RESEARCHER', 'PUBLIC_USER', 'ADMIN']
   },
-  // {
-  //   type: "collapse",
-  //   name: "Researcher",
-  //   key: "researcher",
-  //   route: "/researcher",
-  //   icon: <Settings size="12px" />,
-  //   component: <ResearcherProfile />,
-  //   noCollapse: true,
-  //   permissions: ['LOCAL_MEMBER', 'RESEARCHER']
-  // },
+  {
+    type: "collapse",
+    name: "Researcher",
+    key: "researcher",
+    route: "/researcher",
+    icon: <Settings size="12px" />,
+    component: <ResearcherProfile />,
+    noCollapse: true,
+    permissions: ['LOCAL_MEMBER', 'RESEARCHER']
+  },
   // {
   //   type: "collapse",
   //   name: "Test",
@@ -53,32 +53,32 @@ const routes = [
   // },
   {
     type: "collapse",
-    name: "Tribe",
-    key: "tribe",
-    route: "/tribe",
+    name: "Community",
+    key: "community",
+    route: "/community",
     icon: <Document size="12px" />,
-    component: <CreateTribe />,
+    component: <CreateCommunity />,
     noCollapse: true,
     permissions: ['ADMIN']
   },
-  // {
-  //   type: "collapse",
-  //   name: "Apply",
-  //   key: "apply",
-  //   route: "/apply",
-  //   icon: <Document size="12px" />,
-  //   component: <ResearchersApply />,
-  //   noCollapse: true,
-  // },
-  // {
-  //   type: "collapse",
-  //   name: "Information",
-  //   key: "information",
-  //   route: "/information",
-  //   icon: <Cube size="12px" />,
-  //   component: <EditTribeInfo />,
-  //   noCollapse: true,
-  // },
+  {
+    type: "collapse",
+    name: "Apply",
+    key: "apply",
+    route: "/apply",
+    icon: <Document size="12px" />,
+    component: <CreateResearcher />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Information",
+    key: "information",
+    route: "/updateInformation",
+    icon: <Cube size="12px" />,
+    component: <UpdateCommunityInformation />,
+    noCollapse: true,
+  },
   // {
   //   type: "collapse",
   //   name: "Requests",

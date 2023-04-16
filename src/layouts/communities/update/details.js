@@ -1,24 +1,24 @@
-import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import Card from "@mui/material/Card";
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
-import SoftInput from "components/SoftInput";
+import { useEffect, useState } from "react"
+import PropTypes from "prop-types"
+import { Card } from "@mui/material"
+import SoftBox from "../../../components/SoftBox"
+import SoftTypography from "../../../components/SoftTypography"
+import SoftInput from "../../../components/SoftInput"
 
-function TribeDetails({ etymology, history, culture, education, economy }) {    
-  const [etymologyVal, setEtymology] = useState('')
-  const [historyVal, setHistory] = useState('')
-  const [cultureVal, setCulture] = useState('')
-  const [educationVal, setEducation] = useState('')
-  const [economyVal, setEconomy] = useState('')
+function CommunityUpdateDetails(community) {    
+  const [etymology, setEtymology] = useState('')
+  const [history, setHistory] = useState('')
+  const [culture, setCulture] = useState('')
+  const [education, setEducation] = useState('')
+  const [economy, setEconomy] = useState('')
 
   useEffect(() => {
-    setEtymology(etymology)
-    setHistory(history)
-    setCulture(culture)
-    setEducation(education)
-    setEconomy(economy)
-  }, [etymology, history, culture, education, economy])
+    setEtymology(community.community.etymology)
+    setHistory(community.community.history)
+    setCulture(community.community.culture)
+    setEducation(community.community.education)
+    setEconomy(community.community.economy)
+  }, [community])
 
   return (
     <Card id="delete-account">
@@ -29,7 +29,7 @@ function TribeDetails({ etymology, history, culture, education, economy }) {
           {'Etymology'}
         </SoftTypography>
         <SoftInput
-          value={etymologyVal}
+          value={etymology}
           multiline
           sx={{ mt: 2 }}
           onChange={(e) => setEtymology(e.target.value)}
@@ -42,7 +42,7 @@ function TribeDetails({ etymology, history, culture, education, economy }) {
           {'History'}
         </SoftTypography>
         <SoftInput
-          value={historyVal}
+          value={history}
           multiline
           sx={{ mt: 2 }}
           onChange={(e) => setHistory(e.target.value)}
@@ -55,7 +55,7 @@ function TribeDetails({ etymology, history, culture, education, economy }) {
           {'Culture'}
         </SoftTypography>
         <SoftInput
-          value={cultureVal}
+          value={culture}
           multiline
           sx={{ mt: 2 }}
           onChange={(e) => setCulture(e.target.value)}
@@ -68,7 +68,7 @@ function TribeDetails({ etymology, history, culture, education, economy }) {
           {'Education'}
         </SoftTypography>
         <SoftInput
-          value={educationVal}
+          value={education}
           multiline
           sx={{ mt: 2 }}
           onChange={(e) => setEducation(e.target.value)}
@@ -81,7 +81,7 @@ function TribeDetails({ etymology, history, culture, education, economy }) {
           {'Economy'}
         </SoftTypography>
         <SoftInput
-          value={economyVal}
+          value={economy}
           multiline
           sx={{ mt: 2 }}
           onChange={(e) => setEconomy(e.target.value)}
@@ -91,12 +91,6 @@ function TribeDetails({ etymology, history, culture, education, economy }) {
   );
 }
 
-TribeDetails.propTypes = {
-  etymology: PropTypes.string.isRequired,
-  history: PropTypes.string.isRequired,
-  culture: PropTypes.string.isRequired,
-  education: PropTypes.string.isRequired,
-  economy: PropTypes.string.isRequired
-};
+CommunityUpdateDetails.propTypes = { community: PropTypes.any }
 
-export default TribeDetails;
+export default CommunityUpdateDetails

@@ -1,14 +1,11 @@
-import { useState, useEffect } from "react";
-import Card from "@mui/material/Card";
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
-import SoftInput from "components/SoftInput";
+import { useState, useEffect } from "react"
+import { Card } from "@mui/material"
+import SoftBox from "../../../components/SoftBox"
+import SoftTypography from "../../../components/SoftTypography"
+import SoftInput from "../../../components/SoftInput"
 
-// data
-import { testMoreData } from "./testTribes";
-
-function TribeMoreDetails() {  
-  const { lockedInformation } = testMoreData
+function CommunityUpdateLockedInformation(community) {  
+  const { lockedInformation } = community.community
   const formattedText = lockedInformation?.replace(/\n/g, "\n\n")
 
   const [moreInfo, setMoreInfo] = useState('')
@@ -40,4 +37,4 @@ function TribeMoreDetails() {
   );
 }
 
-export default TribeMoreDetails;
+export default CommunityUpdateLockedInformation

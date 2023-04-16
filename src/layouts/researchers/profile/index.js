@@ -1,36 +1,31 @@
 import { useEffect, useState } from "react";
-import Card from '@mui/material/Card'
-import Grid from "@mui/material/Grid";
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
-import Select from '@mui/material/Select'
-import MenuItem from '@mui/material/MenuItem'
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "examples/Navbars/DashboardNavbar";
+import { Card, Grid, Select, MenuItem } from "@mui/material"
+import Layout from "../../../components/Layout"
+import Navbar from "../../../components/Navbar"
+import SoftBox from "../../../components/SoftBox";
+import SoftTypography from "../../../components/SoftTypography"
 
-//data 
-import { researcherAboutData, testTribes } from "./testTribes";
+// Data 
+import { researcherAboutData, testTribes } from "../testData"
 
 function ResearcherProfile() {
-  const { name, qualifications, community, purpose, response } = researcherAboutData
-
-  const [nameVal, setName] = useState('')
-  const [qualificationsVal, setQualifications] = useState('')
-  const [communityVal, setCommunity] = useState({})
-  const [purposeVal, setPurpose] = useState('')
-  const [responseVal, setResponse] = useState('')
+  const [name, setName] = useState('')
+  const [qualifications, setQualifications] = useState('')
+  const [community, setCommunity] = useState(null)
+  const [purpose, setPurpose] = useState('')
+  const [response, setResponse] = useState('')
 
   useEffect(() => {
-    setName(name)
-    setQualifications(qualifications)
-    setCommunity(community)
-    setPurpose(purpose)
-    setResponse(response)
+    setName(researcherAboutData.name)
+    setQualifications(researcherAboutData.qualifications)
+    setCommunity(researcherAboutData.community)
+    setPurpose(researcherAboutData.purpose)
+    setResponse(researcherAboutData.response)
   }, [researcherAboutData])
 
   return (
-    <DashboardLayout>
-      <DashboardNavbar />
+    <Layout>
+      <Navbar />
 
       <SoftBox mt={4}>
         <Card sx={{ padding: 2 }}>
@@ -47,7 +42,7 @@ function ResearcherProfile() {
                 <SoftTypography
                   variant="h6"
                 >
-                  {nameVal}
+                  {name}
                 </SoftTypography>
               </Grid>
             </Grid>
@@ -64,7 +59,7 @@ function ResearcherProfile() {
                 <SoftTypography
                   variant="h6"
                 >
-                  {qualificationsVal}
+                  {qualifications}
                 </SoftTypography>
               </Grid>
             </Grid>
@@ -80,7 +75,7 @@ function ResearcherProfile() {
               <Grid item xs={12} md={10}>
                 <Select
                   labelId="my-select-label"
-                  value={communityVal}
+                  value={community}
                   disabled
                 >
                   {testTribes?.map((option) => (
@@ -104,7 +99,7 @@ function ResearcherProfile() {
                 <SoftTypography
                   variant="h6"
                 >
-                  {purposeVal}
+                  {purpose}
                 </SoftTypography>
               </Grid>
             </Grid>
@@ -131,13 +126,13 @@ function ResearcherProfile() {
             <SoftTypography
               variant="h6"
             >
-              {responseVal}
+              {response}
             </SoftTypography>
           </SoftBox>
         </Card>
       </SoftBox>
-    </DashboardLayout>
-  );
+    </Layout>
+  )
 }
 
-export default ResearcherProfile;
+export default ResearcherProfile
