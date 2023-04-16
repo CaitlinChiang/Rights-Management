@@ -1,23 +1,23 @@
 import { Grid } from "@mui/material"
-import DashboardLayout from "../../../components/Layout"
-import DashboardNavbar from "../../../components/Navbar"
+import Layout from "../../../components/Layout"
+import Navbar from "../../../components/Navbar"
 import SoftBox from "../../../components/SoftBox"
-import TribeCard from './TribeCard'
+import CommunityCard from './CommunityCard'
 
 // Data
 import { testTribesData } from "./testData"
 
-function TribeCards() {
+function CommunityCards() {
   return (
-    <DashboardLayout>
-      <DashboardNavbar />
+    <Layout>
+      <Navbar />
 
       <SoftBox mt={5} mb={3}>
         <Grid container spacing={3}>
           {testTribesData?.map((community, index) => {
             return (
               <Grid item xs={12} md={6} xl={3} key={index}>
-                <TribeCard
+                <CommunityCard
                   imageUrl={community?.imageUrl}
                   name={community?.name}
                   location={community?.location}
@@ -28,8 +28,8 @@ function TribeCards() {
           })}
         </Grid>
       </SoftBox>
-    </DashboardLayout>
+    </Layout>
   )
 }
 
-export default TribeCards
+export default CommunityCards

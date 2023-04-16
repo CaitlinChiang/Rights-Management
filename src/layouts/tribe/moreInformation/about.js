@@ -1,18 +1,19 @@
-import PropTypes from "prop-types";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia"
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
-import SoftButton from "components/SoftButton";
+import PropTypes from "prop-types"
+import { Card, CardMedia } from "@mui/material"
+import SoftBox from "../../../components/SoftBox"
+import SoftTypography from "../../../components/SoftTypography"
+import SoftButton from "../../../components/SoftButton"
 
-function TribeAbout({ image, title, description, researcher, action, viewOnly }) {
+function CommunityAbout(community) {
+  const { imageUrl, name, location, researcher, route, viewOnly } = community.community
+
   return (
     <Card>
       <SoftBox display="flex" justifyContent="space-between" alignItems="center" pt={3} px={2}>
         <CardMedia
-          src={image}
+          src={imageUrl}
           component="img"
-          title={title}
+          title={name}
           sx={{
             maxWidth: "100%",
             margin: 0,
@@ -29,16 +30,18 @@ function TribeAbout({ image, title, description, researcher, action, viewOnly })
             variant="h5"
             fontWeight="bold"
           >
-            {title}
+            {name}
           </SoftTypography>
+
           <SoftTypography
             variant="h6"
             color="text"
             fontWeight="bold"
             sx={{ mt: 5 }}
           >
-            {description}
+            {'Located At: ' + location}
           </SoftTypography>
+
           <SoftTypography
             variant="h6"
             color="text"
@@ -52,14 +55,15 @@ function TribeAbout({ image, title, description, researcher, action, viewOnly })
             <SoftButton
               sx={{ mt: 3 }}
               component="a"
-              href={action?.route}
+              href={route}
               target="_blank"
               rel="noreferrer"
               variant="outlined"
               size="small"
-              color={action?.color}
+              color={'info'}
+              fullWidth
             >
-              {action?.label}
+              {'Know More'}
             </SoftButton>
           )}
         </SoftBox>
@@ -68,28 +72,6 @@ function TribeAbout({ image, title, description, researcher, action, viewOnly })
   );
 }
 
-TribeAbout.propTypes = {
-  image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  researcher: PropTypes.string.isRequired,
-  action: PropTypes.shape({
-    type: PropTypes.oneOf(["external", "internal"]),
-    route: PropTypes.string.isRequired,
-    color: PropTypes.oneOf([
-      "primary",
-      "secondary",
-      "info",
-      "success",
-      "warning",
-      "error",
-      "light",
-      "dark",
-      "white",
-    ]).isRequired,
-    label: PropTypes.string.isRequired,
-  }).isRequired,
-  viewOnly: PropTypes.bool
-};
+CommunityAbout.propTypes = { community: PropTypes.any }
 
-export default TribeAbout;
+export default CommunityAbout;

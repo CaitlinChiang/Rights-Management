@@ -5,7 +5,7 @@ import SoftBox from "../../../components/SoftBox"
 import SoftTypography from "../../../components/SoftTypography"
 import SoftButton from "../../../components/SoftButton"
 
-function TribeCard({ imageUrl, name, location, route }) {
+function CommunityCard({ imageUrl, name, location, route }) {
   return (
     <Card
       sx={{
@@ -68,11 +68,11 @@ function TribeCard({ imageUrl, name, location, route }) {
   );
 }
 
-TribeCard.propTypes = {
+CommunityCard.propTypes = {
   imageUrl: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   route: PropTypes.string.isRequired
 }
 
-export default TribeCard
+export default CommunityCard

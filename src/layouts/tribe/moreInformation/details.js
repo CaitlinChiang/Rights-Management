@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
-import Card from "@mui/material/Card";
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
+import { Card } from "@mui/material"
+import SoftBox from "../../../components/SoftBox"
+import SoftTypography from "../../../components/SoftTypography"
 
-function TribeDetails({ etymology, history, culture, education, economy }) {  
+function CommunityDetails(community) { 
+  const { etymology, history, culture, education, economy } = community.community
+
   return (
     <Card id="delete-account">
       <SoftBox pt={3} px={2} pb={2}>
@@ -80,12 +82,6 @@ function TribeDetails({ etymology, history, culture, education, economy }) {
   );
 }
 
-TribeDetails.propTypes = {
-  etymology: PropTypes.string.isRequired,
-  history: PropTypes.string.isRequired,
-  culture: PropTypes.string.isRequired,
-  education: PropTypes.string.isRequired,
-  economy: PropTypes.string.isRequired
-};
+CommunityDetails.propTypes = { community: PropTypes.any }
 
-export default TribeDetails;
+export default CommunityDetails

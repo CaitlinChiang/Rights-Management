@@ -1,21 +1,21 @@
 import { useState } from "react";
 import { Card, Grid } from "@mui/material"
-import DashboardLayout from "../../../components/Layout"
-import DashboardNavbar from "../../../components/Navbar"
+import Layout from "../../../components/Layout"
+import Navbar from "../../../components/Navbar"
 import SoftBox from "../../../components/SoftBox"
 import SoftInput from "../../../components/SoftInput"
 import SoftTypography from "../../../components/SoftTypography"
 import SoftButton from "../../../components/SoftButton"
 import ImageUploader from "../../../components/ImageUploader"
 
-function CreateTribe() {
+function CreateCommunity() {
   const [name, setName] = useState('')
   const [location, setLocation] = useState('')
   const [file, setFile] = useState(null)
 
   return (
-    <DashboardLayout>
-      <DashboardNavbar />
+    <Layout>
+      <Navbar />
 
       <SoftBox mt={4}>
         <Card sx={{ padding: 2 }}>
@@ -58,8 +58,8 @@ function CreateTribe() {
           </SoftBox>
         </Card>
       </SoftBox>
-    </DashboardLayout>
+    </Layout>
   );
 }
 
-export default CreateTribe
+export default CreateCommunity

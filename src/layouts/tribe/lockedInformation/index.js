@@ -1,15 +1,15 @@
-import TribeLocked from "./locked";
-import TribeMoreDetails from './show'
+import LockedInformation from "./locked";
+import ShowInformation from './show'
 
 // data
 import { userTestData } from "./testData";
 
-function TribeMore() {
+function CommunityLockedInformation() {
   if (userTestData?.locked === true) {
-    return <TribeLocked />
+    return <LockedInformation />
   } else {
-    return <TribeMoreDetails />
+    return <ShowInformation />
   }
 }
 
-export default TribeMore
+export default CommunityLockedInformation

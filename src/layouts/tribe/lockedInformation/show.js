@@ -1,19 +1,19 @@
-import Card from "@mui/material/Card";
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "examples/Navbars/DashboardNavbar";
+import { Card } from "@mui/material"
+import Layout from "../../../components/Layout"
+import Navbar from "../../../components/Navbar"
+import SoftBox from "../../../components/SoftBox";
+import SoftTypography from "../../../components/SoftTypography"
 
 // data
-import { testMoreData } from "./testData";
+import { testMoreData } from "./testData"
 
-function TribeMoreDetails() {  
+function ShowInformation() {  
   const { lockedInformation } = testMoreData
   const formattedText = lockedInformation?.replace(/\n/g, "\n\n")
 
   return (
-    <DashboardLayout>
-      <DashboardNavbar />
+    <Layout>
+      <Navbar />
 
       <SoftBox mt={4}>
         <Card id="delete-account">
@@ -33,8 +33,8 @@ function TribeMoreDetails() {
           </SoftBox>
         </Card>
       </SoftBox>
-    </DashboardLayout>
-  );
+    </Layout>
+  )
 }
 
-export default TribeMoreDetails;
+export default ShowInformation

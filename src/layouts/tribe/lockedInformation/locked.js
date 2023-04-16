@@ -1,21 +1,18 @@
 import { useState } from "react";
-import Card from '@mui/material/Card'
-import Checkbox from "@mui/material/Checkbox";
-import Grid from "@mui/material/Grid";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import SoftBox from "components/SoftBox";
-import SoftInput from "components/SoftInput";
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import SoftTypography from "components/SoftTypography";
+import { Card, Checkbox, Grid, FormControlLabel } from "@mui/material"
+import Layout from "../../../components/Layout"
+import Navbar from "../../../components/Navbar"
+import SoftBox from "../../../components/SoftBox"
+import SoftInput from "../../../components/SoftInput"
+import SoftTypography from "../../../components/SoftTypography"
 
-function TribeLocked() {
+function LockedInformation() {
   const [access, setAccess] = useState(false)
   const [purpose, setPurpose] = useState('')
 
   return (
-    <DashboardLayout>
-      <DashboardNavbar />
+    <Layout>
+      <Navbar />
 
       <SoftBox mt={4}>
         <Card sx={{ padding: 2 }}>
@@ -49,8 +46,8 @@ function TribeLocked() {
           </SoftBox>
         </Card>
       </SoftBox>
-    </DashboardLayout>
-  );
+    </Layout>
+  )
 }
 
-export default TribeLocked;
+export default LockedInformation
