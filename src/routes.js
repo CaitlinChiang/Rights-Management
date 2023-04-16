@@ -15,6 +15,7 @@ import Settings from "examples/Icons/Settings";
 import Document from "examples/Icons/Document";
 import CustomerSupport from "examples/Icons/CustomerSupport";
 import Cube from "examples/Icons/Cube";
+import AddTribe from 'layouts/tribe/addTribe'
 
 const routes = [
   { type: "title", title: "Account Pages", key: "account-pages" },
@@ -35,6 +36,15 @@ const routes = [
     route: "/home",
     icon: <Cube size="12px" />,
     component: <Home />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Add",
+    key: "add",
+    route: "/add",
+    icon: <Cube size="12px" />,
+    component: <AddTribe />,
     noCollapse: true,
   },
   {
