@@ -3,7 +3,7 @@ import SoftBox from "components/SoftBox";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import TribeDetails from "./details";
-import TribeAbout from "../tribe/about";
+import TribeAbout from "./about";
 import TribeMoreDetails from "./moreInformation";
 
 // data

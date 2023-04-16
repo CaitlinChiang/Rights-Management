@@ -7,6 +7,7 @@ import Tribe from 'layouts/tribe'
 import TribeMore from 'layouts/tribe/more'
 import ResearchersApply from 'layouts/researchers'
 import EditTribeInfo from 'layouts/researchers/editTribeInfo'
+import ResearcherProfile from 'layouts/researchers/profile'
 
 // Soft UI Dashboard React icons
 import Shop from "examples/Icons/Shop";
@@ -18,7 +19,19 @@ import CustomerSupport from "examples/Icons/CustomerSupport";
 import CreditCard from "examples/Icons/CreditCard";
 import Cube from "examples/Icons/Cube";
 
+
 const routes = [
+  { type: "title", title: "Account Pages", key: "account-pages" },
+  {
+    type: "collapse",
+    name: "Researcher",
+    key: "researcher",
+    route: "/researcher",
+    icon: <CustomerSupport size="12px" />,
+    component: <ResearcherProfile />,
+    noCollapse: true,
+  },
+  { type: "title", title: "Navigation", key: "account-pages" },
   {
     type: "collapse",
     name: "Home",
@@ -50,16 +63,16 @@ const routes = [
     type: "collapse",
     name: "Apply",
     key: "apply",
-    route: "/researchers/apply",
-    icon: <Cube size="12px" />,
+    route: "/apply",
+    icon: <Document size="12px" />,
     component: <ResearchersApply />,
     noCollapse: true,
   },
   {
     type: "collapse",
-    name: "Edit Info",
-    key: "edit",
-    route: "/researchers/editInfo",
+    name: "Information",
+    key: "information",
+    route: "/information",
     icon: <Cube size="12px" />,
     component: <EditTribeInfo />,
     noCollapse: true,
@@ -71,34 +84,6 @@ const routes = [
     route: "/tables",
     icon: <Office size="12px" />,
     component: <Tables />,
-    noCollapse: true,
-  },
-  { type: "title", title: "Account Pages", key: "account-pages" },
-  {
-    type: "collapse",
-    name: "Profile",
-    key: "profile",
-    route: "/profile",
-    icon: <CustomerSupport size="12px" />,
-    component: <Profile />,
-    noCollapse: true,
-  },
-  {
-    type: "collapse",
-    name: "Sign In",
-    key: "sign-in",
-    route: "/authentication/sign-in",
-    icon: <Document size="12px" />,
-    component: <SignIn />,
-    noCollapse: true,
-  },
-  {
-    type: "collapse",
-    name: "Sign Up",
-    key: "sign-up",
-    route: "/authentication/sign-up",
-    icon: <SpaceShip size="12px" />,
-    component: <SignUp />,
     noCollapse: true,
   }
 ]
