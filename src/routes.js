@@ -110,8 +110,9 @@ const routes = [
     noCollapse: true,
     permission: ['ADMIN']
   }
-].filter(obj => {
-  return Array.isArray(obj.permission) && obj.permission.includes(user?.permission)
-})
+]
+// .filter(obj => {
+//   return Array.isArray(obj.permission) && obj.permission.includes(user?.permission)
+// })
 
 export default routes
