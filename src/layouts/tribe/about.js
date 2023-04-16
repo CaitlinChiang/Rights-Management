@@ -18,8 +18,7 @@ function TribeAbout({ image, title, description, researcher, action }) {
             margin: 0,
             boxShadow: ({ boxShadows: { md } }) => md,
             objectFit: "cover",
-            objectPosition: "center",
-
+            objectPosition: "center"
           }}
         />
       </SoftBox>

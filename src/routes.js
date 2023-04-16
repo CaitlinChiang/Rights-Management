@@ -5,6 +5,7 @@ import Profile from "layouts/profile"
 import SignIn from "layouts/authentication/sign-in"
 import SignUp from "layouts/authentication/sign-up"
 import Tribe from 'layouts/tribe'
+import TribeMore from 'layouts/tribe/more'
 
 // Soft UI Dashboard React icons
 import Shop from "examples/Icons/Shop";
@@ -28,8 +29,8 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Tribe About",
-    key: "tribe",
+    name: "About",
+    key: "about",
     route: "/tribe/about",
     icon: <Cube size="12px" />,
     component: <Tribe />,
@@ -37,11 +38,11 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Tribe More",
+    name: "More",
     key: "more",
     route: "/tribe/more",
     icon: <Cube size="12px" />,
-    component: <Tribe />,
+    component: <TribeMore />,
     noCollapse: true,
   },
   {
