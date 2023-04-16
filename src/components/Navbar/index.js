@@ -1,29 +1,11 @@
-/**
-=========================================================
-* Soft UI Dashboard React - v4.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useState, useEffect } from "react"
 import { useLocation, Link } from "react-router-dom"
 import PropTypes from "prop-types"
-import { AppBar, Toolbar, IconButton, Menu, Icon } from  "@mui/material"
+import { AppBar, Toolbar, IconButton, Icon } from  "@mui/material"
 import SoftBox from '../SoftBox'
 import SoftTypography from "../SoftTypography"
 import SoftInput from "../SoftInput"
-import Breadcrumbs from "../../examples/Breadcrumbs";
-import NotificationItem from "../../examples/Items/NotificationItem";
-
-// Custom styles for DashboardNavbar
+import Breadcrumbs from "./breadcrumbs"
 import {
   navbar,
   navbarContainer,
@@ -31,95 +13,39 @@ import {
   navbarIconButton,
   navbarMobileMenu,
 } from "./styles"
-
-// Soft UI Dashboard React context
 import {
   useSoftUIController,
   setTransparentNavbar,
   setMiniSidenav,
   setOpenConfigurator,
-} from "context";
+} from "context"
 
-// Images
-import team2 from "assets/images/team-2.jpg";
-import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
-
-function DashboardNavbar({ absolute, light, isMini }) {
+function Navbar({ absolute, light, isMini }) {
   const [navbarType, setNavbarType] = useState();
   const [controller, dispatch] = useSoftUIController();
   const { miniSidenav, transparentNavbar, fixedNavbar, openConfigurator } = controller;
-  const [openMenu, setOpenMenu] = useState(false);
   const route = useLocation().pathname.split("/").slice(1);
 
   useEffect(() => {
-    // Setting the navbar type
     if (fixedNavbar) {
       setNavbarType("sticky");
     } else {
       setNavbarType("static");
     }
 
-    // A function that sets the transparent state of the navbar.
     function handleTransparentNavbar() {
       setTransparentNavbar(dispatch, (fixedNavbar && window.scrollY === 0) || !fixedNavbar);
     }
-
-    /** 
-     The event listener that's calling the handleTransparentNavbar function when 
-     scrolling the window.
-    */
     window.addEventListener("scroll", handleTransparentNavbar);
 
-    // Call the handleTransparentNavbar function to set the state with the initial value.
     handleTransparentNavbar();
 
-    // Remove event listener on cleanup
     return () => window.removeEventListener("scroll", handleTransparentNavbar);
   }, [dispatch, fixedNavbar]);
 
   const handleMiniSidenav = () => setMiniSidenav(dispatch, !miniSidenav);
   const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
   const handleOpenMenu = (event) => setOpenMenu(event.currentTarget);
-  const handleCloseMenu = () => setOpenMenu(false);
-
-  // Render the notifications menu
-  const renderMenu = () => (
-    <Menu
-      anchorEl={openMenu}
-      anchorReference={null}
-      anchorOrigin={{
-        vertical: "bottom",
-        horizontal: "left",
-      }}
-      open={Boolean(openMenu)}
-      onClose={handleCloseMenu}
-      sx={{ mt: 2 }}
-    >
-      <NotificationItem
-        image={<img src={team2} alt="person" />}
-        title={["New message", "from Laur"]}
-        date="13 minutes ago"
-        onClick={handleCloseMenu}
-      />
-      <NotificationItem
-        image={<img src={logoSpotify} alt="person" />}
-        title={["New album", "by Travis Scott"]}
-        date="1 day"
-        onClick={handleCloseMenu}
-      />
-      <NotificationItem
-        color="secondary"
-        image={
-          <Icon fontSize="small" sx={{ color: ({ palette: { white } }) => white.main }}>
-            payment
-          </Icon>
-        }
-        title={["", "Payment successfully completed"]}
-        date="2 days"
-        onClick={handleCloseMenu}
-      />
-    </Menu>
-  );
 
   return (
     <AppBar
@@ -187,7 +113,6 @@ function DashboardNavbar({ absolute, light, isMini }) {
               >
                 <Icon className={light ? "text-white" : "text-dark"}>notifications</Icon>
               </IconButton>
-              {renderMenu()}
             </SoftBox>
           </SoftBox>
         )}
@@ -196,18 +121,16 @@ function DashboardNavbar({ absolute, light, isMini }) {
   );
 }
 
-// Setting default values for the props of DashboardNavbar
-DashboardNavbar.defaultProps = {
+Navbar.defaultProps = {
   absolute: false,
   light: false,
   isMini: false,
-};
+}
 
-// Typechecking props for the DashboardNavbar
-DashboardNavbar.propTypes = {
+Navbar.propTypes = {
   absolute: PropTypes.bool,
   light: PropTypes.bool,
   isMini: PropTypes.bool,
-};
+}
 
-export default DashboardNavbar;
+export default Navbar

@@ -8,12 +8,11 @@ import ResearchersTable from 'layouts/researchers/applicants'
 // import SignIn from "layouts/authentication/sign-in"
 // import SignUp from "layouts/authentication/sign-up"
 
-// Soft UI Dashboard React icons
-import Office from "examples/Icons/Office";
-import Settings from "examples/Icons/Settings";
-import Document from "examples/Icons/Document";
-import CustomerSupport from "examples/Icons/CustomerSupport";
-import Cube from "examples/Icons/Cube";
+import Office from "examples/Icons/Office"
+import Settings from "examples/Icons/Settings"
+import Document from "examples/Icons/Document"
+import CustomerSupport from "examples/Icons/CustomerSupport"
+import Cube from "examples/Icons/Cube"
 
 const user = {
   permission: 'LOCAL_MEMBER', // LOCAL_MEMBER, RESEARCHER, PUBLIC_USER, ADMIN

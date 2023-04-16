@@ -1,30 +1,9 @@
-/**
-=========================================================
-* Soft UI Dashboard React - v4.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { forwardRef } from "react";
-
-// prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
-
-// Custom styles for SoftInput
-import SoftInputRoot from "components/SoftInput/SoftInputRoot";
-import SoftInputWithIconRoot from "components/SoftInput/SoftInputWithIconRoot";
-import SoftInputIconBoxRoot from "components/SoftInput/SoftInputIconBoxRoot";
-import SoftInputIconRoot from "components/SoftInput/SoftInputIconRoot";
-
-// Soft UI Dashboard React contexts
+import SoftInputRoot from "../SoftInput/SoftInputRoot";
+import SoftInputWithIconRoot from "../SoftInput/SoftInputWithIconRoot";
+import SoftInputIconBoxRoot from "../SoftInput/SoftInputIconBoxRoot";
+import SoftInputIconRoot from "../SoftInput/SoftInputIconRoot";
 import { useSoftUIController } from "context";
 
 const SoftInput = forwardRef(({ size, icon, error, success, disabled, ...rest }, ref) => {
@@ -70,7 +49,6 @@ const SoftInput = forwardRef(({ size, icon, error, success, disabled, ...rest },
   return template;
 });
 
-// Setting default values for the props of SoftInput
 SoftInput.defaultProps = {
   size: "medium",
   icon: {
@@ -82,7 +60,6 @@ SoftInput.defaultProps = {
   disabled: false,
 };
 
-// Typechecking props for the SoftInput
 SoftInput.propTypes = {
   size: PropTypes.oneOf(["small", "medium", "large"]),
   icon: PropTypes.shape({
