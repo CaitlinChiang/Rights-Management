@@ -1,11 +1,11 @@
 import Home from 'layouts/home'
 import Tables from "layouts/tables"
-import Billing from "layouts/billing"
 import Profile from "layouts/profile"
 import SignIn from "layouts/authentication/sign-in"
 import SignUp from "layouts/authentication/sign-up"
 import Tribe from 'layouts/tribe'
 import TribeMore from 'layouts/tribe/more'
+import ResearchersApply from 'layouts/researchers'
 
 // Soft UI Dashboard React icons
 import Shop from "examples/Icons/Shop";
@@ -47,20 +47,20 @@ const routes = [
   },
   {
     type: "collapse",
+    name: "Apply",
+    key: "apply",
+    route: "/researchers/apply",
+    icon: <Cube size="12px" />,
+    component: <ResearchersApply />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
     name: "Tables",
     key: "tables",
     route: "/tables",
     icon: <Office size="12px" />,
     component: <Tables />,
-    noCollapse: true,
-  },
-  {
-    type: "collapse",
-    name: "Billing",
-    key: "billing",
-    route: "/billing",
-    icon: <CreditCard size="12px" />,
-    component: <Billing />,
     noCollapse: true,
   },
   { type: "title", title: "Account Pages", key: "account-pages" },
