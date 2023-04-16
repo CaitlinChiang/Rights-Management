@@ -1,8 +1,7 @@
 import Home from 'layouts/home'
-import Tables from "layouts/tables"
-import Profile from "layouts/profile"
-import SignIn from "layouts/authentication/sign-in"
-import SignUp from "layouts/authentication/sign-up"
+import Requests from "layouts/requests"
+// import SignIn from "layouts/authentication/sign-in"
+// import SignUp from "layouts/authentication/sign-up"
 import Tribe from 'layouts/tribe'
 import TribeMore from 'layouts/tribe/more'
 import ResearchersApply from 'layouts/researchers'
@@ -14,11 +13,8 @@ import Shop from "examples/Icons/Shop";
 import Office from "examples/Icons/Office";
 import Settings from "examples/Icons/Settings";
 import Document from "examples/Icons/Document";
-import SpaceShip from "examples/Icons/SpaceShip";
 import CustomerSupport from "examples/Icons/CustomerSupport";
-import CreditCard from "examples/Icons/CreditCard";
 import Cube from "examples/Icons/Cube";
-
 
 const routes = [
   { type: "title", title: "Account Pages", key: "account-pages" },
@@ -79,11 +75,11 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Tables",
-    key: "tables",
-    route: "/tables",
-    icon: <Office size="12px" />,
-    component: <Tables />,
+    name: "Requests",
+    key: "requests",
+    route: "/requests",
+    icon: <CustomerSupport size="12px" />,
+    component: <Requests />,
     noCollapse: true,
   }
 ]
