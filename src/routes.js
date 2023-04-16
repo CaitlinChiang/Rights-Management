@@ -2,6 +2,8 @@ import Dashboard from "layouts/dashboard"
 import Tables from "layouts/tables"
 import Billing from "layouts/billing"
 import Profile from "layouts/profile"
+import SignIn from "layouts/authentication/sign-in"
+import SignUp from "layouts/authentication/sign-up"
 
 // Soft UI Dashboard React icons
 import Shop from "examples/Icons/Shop";
@@ -49,6 +51,24 @@ const routes = [
     route: "/profile",
     icon: <CustomerSupport size="12px" />,
     component: <Profile />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Sign In",
+    key: "sign-in",
+    route: "/authentication/sign-in",
+    icon: <Document size="12px" />,
+    component: <SignIn />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Sign Up",
+    key: "sign-up",
+    route: "/authentication/sign-up",
+    icon: <SpaceShip size="12px" />,
+    component: <SignUp />,
     noCollapse: true,
   }
 ]
