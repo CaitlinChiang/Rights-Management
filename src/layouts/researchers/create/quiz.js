@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import PropTypes from "prop-types"
 import {
-  FormGroup,
+  FormControl,
+  RadioGroup,
   Grid,
   FormControlLabel,
   Radio
@@ -12,12 +13,24 @@ import SoftTypography from "../../../components/SoftTypography"
 import { testQuiz } from "./testData";
 
 function ShowCaseStudyTest({ showScore }) {
-  const [currentQuestion, setCurrentQuestion] = useState(0)
-  const [score, setScore] = useState(0)
+  const [answers, setAnswers] = useState([])
 
-  const handleAnswer = (value) => {
-    setScore(score + value)
-    setCurrentQuestion(currentQuestion + 1)
+  const handleAnswer = (value, index) => {
+    const ans = [...answers]
+    ans[index] = value
+    setAnswers(ans)
+  }
+
+  const displayScore = () => {
+    const sum = answers.reduce((accumulator, currentValue) => {
+      if (parseInt(currentValue) === 1) {
+        return accumulator + parseInt(currentValue)
+      } else {
+        return accumulator
+      }
+    }, 0)
+    
+    return sum
   }
 
   return (
@@ -29,35 +42,35 @@ function ShowCaseStudyTest({ showScore }) {
               {e.question}
             </SoftTypography>
 
-            {e.choices.map((c, indexC) => {
-              return (
-                <Grid container spacing={0} key={indexC}>
-                  <Grid item xs={1}>
-                    <FormGroup key={index}>
-                      <FormControlLabel
-                        key={indexC}
-                        value={c.value}
-                        control={<Radio />}
-                        sx={{ ml: 1 }}
-                        onChange={() => handleAnswer(c.value)}
-                      />  
-                    </FormGroup>
-                  </Grid> 
-                  <Grid item xs={11}>
-                    <SoftTypography variant="h6">
-                      {c.label}
-                    </SoftTypography>
-                  </Grid> 
-                </Grid>
-              )
-            })}
+            <FormControl component="fieldset">
+              <RadioGroup onChange={(e) => handleAnswer(e.target.value, index)}>
+                {e.choices.map((c, indexC) => {
+                  return (
+                    <Grid container spacing={0} key={indexC}>
+                      <Grid item xs={1}>
+                        <FormControlLabel
+                          value={c.value}
+                          control={<Radio />}
+                          sx={{ ml: 1 }}
+                        />
+                      </Grid> 
+                      <Grid item xs={11}>
+                        <SoftTypography variant="h6">
+                          {c.label}
+                        </SoftTypography>
+                      </Grid> 
+                    </Grid>
+                  )
+                })}
+              </RadioGroup>
+            </FormControl>
           </>
         )
       })}
         
       {showScore && (
         <SoftTypography>
-          {'Score: ' + score}
+          {'Score: ' + displayScore()}
         </SoftTypography>
       )}
     </>

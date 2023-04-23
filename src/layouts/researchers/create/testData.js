@@ -12,11 +12,11 @@ export const testQuiz = [
       },      
       {        
         "label": "Abandon the research and move on to a different community",        
-        value: 0     
+        value: 2     
       },      
       {        
         "label": "Use Google Translate for translation and interpretation for convenience and efficiency",        
-        value: 0     
+        value: 3     
       }    
     ]
   },
@@ -33,11 +33,11 @@ export const testQuiz = [
       },
       {
         "label": "The ability to receive fair compensation for one's time and assistance",
-        value: 0
+        value: 2
       },
       {
         "label": "The ability to access healthcare services and other resources",
-        value: 0
+        value: 3
       }
     ]
   },
@@ -63,11 +63,11 @@ export const testQuiz = [
       },
       {
         "label": "By ignoring local customs and traditions",
-        value: 0
+        value: 2
       },
       {
         "label": "By using a standardized approach to research that is independent of local context",
-        value: 0
+        value: 3
       },
       {
         "label": "By incorporating local knowledge and perspectives into the research design",
@@ -88,11 +88,11 @@ export const testQuiz = [
       },
       {
         "label": "A mechanism for ensuring that participants are compensated for their time and assistance",
-        value: 0
+        value: 2
       },
       {
         "label": "A method for verifying the identity and eligibility of research participants",
-        value: 0
+        value: 3
       }
     ]
   },
@@ -109,11 +109,11 @@ export const testQuiz = [
       },      
       {        
         "label": "A person or group who is able to resist colonization and maintain cultural autonomy",        
-        value: 0     
+        value: 2     
       },      
       {        
         "label": "A person or group who is willing to participate in research studies for compensation",        
-        value: 0     
+        value: 3     
       }    
     ]
   },
@@ -130,7 +130,7 @@ export const testQuiz = [
       },
       {
         "label": "Insist these are not your intentions and reiterate the importance of the research",
-        value: 0
+        value: 2
       }
     ]
   },
@@ -147,11 +147,11 @@ export const testQuiz = [
       },
       {
         "label": "Bring up their past research experience, and highlight how other communities have trusted them before, assuring the community that they have nothing to worry about",
-        value: 0
+        value: 2
       },
       {
         "label": "Berate the previous researchers to show you are on the community's side",
-        value: 0
+        value: 3
       }
     ]
   }
