@@ -115,10 +115,10 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Purchase",
-    key: "purchase",
+    // name: "Purchase",
+    // key: "purchase",
     route: "/marketplace/item",
-    icon: <Shop size="12px" />,
+    // icon: <Shop size="12px" />,
     component: <PurchaseNFT />,
     noCollapse: true,
     permission: ['LOCAL_MEMBER', 'RESEARCHER', 'PUBLIC_USER', 'ADMIN'],
@@ -126,10 +126,10 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Know More 1",
-    key: "knowMore1",
+    // name: "Know More 1",
+    // key: "knowMore1",
     route: "/communities/about",
-    icon: <Office size="12px" />,
+    // icon: <Office size="12px" />,
     component: <CommunityMoreInformation />,
     noCollapse: true,
     permission: ['LOCAL_MEMBER', 'RESEARCHER', 'PUBLIC_USER', 'ADMIN'],
@@ -137,18 +137,18 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Know More 2",
-    key: "knowMore2",
+    // name: "Know More 2",
+    // key: "knowMore2",
     route: "/communities/lockedInformation",
-    icon: <Office size="12px" />,
+    // icon: <Office size="12px" />,
     component: <CommunityLockedInformation />,
     noCollapse: true,
     permission: ['LOCAL_MEMBER', 'RESEARCHER', 'PUBLIC_USER', 'ADMIN'],
     sidebarVisible: false
   }
 ]
-// .filter(obj => {
-//   return Array.isArray(obj.permission) && obj.permission.includes(user?.permission)
-// })
+.filter(obj => {
+  return Array.isArray(obj.permission) && obj.permission.includes(user?.permission)
+})
 
 export default routes
