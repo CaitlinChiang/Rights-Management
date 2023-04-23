@@ -1,4 +1,4 @@
-# Digital Rights Management
+# The Decolonization
 
 Problem: The modern world wants to make an effort in collaborating with indigenous communities, and this includes finding more data about them in order to stay informed and have a deeper understanding of them. The issue is that there is not a ton of open information available to the public -- and if there were, some information were not consented to be displayed to public. 
 
