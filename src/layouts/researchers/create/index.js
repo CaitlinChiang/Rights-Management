@@ -6,6 +6,7 @@ import SoftBox from "../../../components/SoftBox"
 import SoftInput from "../../../components/SoftInput"
 import SoftTypography from "../../../components/SoftTypography"
 import SoftButton from "../../../components/SoftButton"
+import ShowCaseStudyTest from './quiz'
 
 // Data 
 import { testTribes } from "../testData";
@@ -15,7 +16,7 @@ function CreateResearcher() {
   const [qualifications, setQualifications] = useState('')
   const [community, setCommunity] = useState({})
   const [purpose, setPurpose] = useState('')
-  const [response, setResponse] = useState('')
+  const [showScore, setShowScore] = useState(false)
 
   return (
     <Layout>
@@ -87,20 +88,20 @@ function CreateResearcher() {
             </Grid>
 
             <SoftTypography
-              variant="h6"
+              variant="h5"
               sx={{ mt: 5, mb: 2 }}
             >
               {'Case Study: '}
             </SoftTypography>
             <SoftTypography
-              variant="h6"
+              variant="h5"
               sx={{ mt: 2, mb: 2 }}
             >
-              {'In tincidunt eu mi id dignissim. Suspendisse potenti. Morbi porttitor ex lectus, at porttitor ante rhoncus in. Maecenas in massa justo. Vivamus lacus leo, dapibus vel felis non, pretium feugiat mauris. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin sit amet facilisis sem. Phasellus congue sem dignissim consequat volutpat. In euismod suscipit quam, ac ornare metus tincidunt quis.'}
+              {'A group of researchers from a university is interested in studying the effects of climate change on a rural community in Southeast Asia. The community relies on rice farming, fishing, and forestry for their livelihoods. The researchers plan to conduct interviews with community members, collect data on crop yields, and measure the water quality of local rivers. The researchers have obtained permission from the national government to conduct their study and have provided the community with some compensation for their time and assistance.'}
             </SoftTypography>
-            <SoftInput value={response} multiline onChange={(e) => setResponse(e.target.value)} placeholder={'Type response to the case study here.'} />
+            <ShowCaseStudyTest showScore={showScore} />
 
-            <SoftButton variant="gradient" color="info" fullWidth sx={{ mt: 5 }}>
+            <SoftButton onClick={() => setShowScore(true)} variant="gradient" color="info" fullWidth sx={{ mt: 5 }}>
               {'Submit Application'}
             </SoftButton>
           </SoftBox>
