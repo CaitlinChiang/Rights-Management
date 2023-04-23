@@ -7,13 +7,14 @@ import ResearcherProfile from './layouts/researchers/profile'
 import CreateResearcher from './layouts/researchers/create'
 import RequestsTable from "./layouts/requests"
 import ResearchersTable from './layouts/researchers/applicants'
-// import SignIn from "layouts/authentication/sign-in"
-// import SignUp from "layouts/authentication/sign-up"
+import NFTCards from './layouts/marketplace/cards'
+import PurchaseNFT from './layouts/marketplace/purchase'
 import Office from "./components/Icons/Office"
 import Settings from "./components/Icons/Settings"
 import Document from "./components/Icons/Document"
 import CustomerSupport from "./components/Icons/CustomerSupport"
 import Cube from "./components/Icons/Cube"
+import Shop from './components/Icons/Shop'
 
 const user = {
   permission: 'LOCAL_MEMBER', // LOCAL_MEMBER, RESEARCHER, PUBLIC_USER, ADMIN
@@ -109,6 +110,27 @@ const routes = [
     component: <ResearchersTable />,
     noCollapse: true,
     permission: ['ADMIN']
+  },
+  ,
+  {
+    type: "collapse",
+    name: "Marketplace",
+    key: "marketplace",
+    route: "/marketplace",
+    icon: <Shop size="12px" />,
+    component: <NFTCards />,
+    noCollapse: true,
+    permission: ['ADMIN', 'LOCAL_MEMBER', 'RESEARCHER', 'PUBLIC_USER']
+  },
+  {
+    type: "collapse",
+    name: "Test",
+    key: "test",
+    route: "/test",
+    icon: <Shop size="12px" />,
+    component: <PurchaseNFT />,
+    noCollapse: true,
+    permission: ['LOCAL_MEMBER', 'RESEARCHER', 'PUBLIC_USER', 'ADMIN']
   }
 ]
 // .filter(obj => {
