@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import SoftButton from 'components/SoftButton';
 import SoftTypography from 'components/SoftTypography';
 
-function ImageUploader({ file, setFile }) {
+function ImageUploader({ file, setFile, supportingText }) {
   const [confirmationText, setConfirmationText] = useState('')
 
   useEffect(() => {
@@ -32,7 +32,7 @@ function ImageUploader({ file, setFile }) {
           fullWidth
           color="secondary" 
         >
-          {'Upload Image'}
+          {supportingText || 'Upload Image'}
         </SoftButton>
       </label>
       <SoftTypography
@@ -48,7 +48,8 @@ function ImageUploader({ file, setFile }) {
 
 ImageUploader.propTypes = {
   file: PropTypes.isRequired,
-  setFile: PropTypes.isRequired
+  setFile: PropTypes.isRequired,
+  supportingText: PropTypes.string
 };
 
 export default ImageUploader

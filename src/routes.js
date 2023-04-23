@@ -9,6 +9,7 @@ import RequestsTable from "./layouts/requests"
 import ResearchersTable from './layouts/researchers/applicants'
 import NFTCards from './layouts/marketplace/cards'
 import PurchaseNFT from './layouts/marketplace/purchase'
+import CreateNFT from './layouts/marketplace/create'
 import Office from "./components/Icons/Office"
 import Settings from "./components/Icons/Settings"
 import Document from "./components/Icons/Document"
@@ -17,7 +18,7 @@ import Cube from "./components/Icons/Cube"
 import Shop from './components/Icons/Shop'
 
 const user = {
-  permission: 'LOCAL_MEMBER', // LOCAL_MEMBER, RESEARCHER, PUBLIC_USER, ADMIN
+  permission: 'ADMIN', // LOCAL_MEMBER, RESEARCHER, PUBLIC_USER, ADMIN
 }
 
 const routes = [
@@ -131,6 +132,16 @@ const routes = [
     component: <PurchaseNFT />,
     noCollapse: true,
     permission: ['LOCAL_MEMBER', 'RESEARCHER', 'PUBLIC_USER', 'ADMIN']
+  },
+  {
+    type: "collapse",
+    name: "NFT",
+    key: "NFT",
+    route: "/NFT",
+    icon: <Cube size="12px" />,
+    component: <CreateNFT />,
+    noCollapse: true,
+    permission: ['LOCAL_MEMBER', 'RESEARCHER']
   }
 ]
 // .filter(obj => {
