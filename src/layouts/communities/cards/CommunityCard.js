@@ -27,8 +27,7 @@ function CommunityCard({ imageUrl, name, location, route }) {
             margin: 0,
             boxShadow: ({ boxShadows: { md } }) => md,
             objectFit: "cover",
-            objectPosition: "center",
-
+            objectPosition: "center"
           }}
         />
       </SoftBox>

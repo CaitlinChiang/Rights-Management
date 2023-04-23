@@ -34,26 +34,6 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Know More 1",
-    key: "knowMore1",
-    route: "/communities/about",
-    icon: <Office size="12px" />,
-    component: <CommunityMoreInformation />,
-    noCollapse: true,
-    permission: ['LOCAL_MEMBER', 'RESEARCHER', 'PUBLIC_USER', 'ADMIN']
-  },
-  {
-    type: "collapse",
-    name: "Know More 2",
-    key: "knowMore2",
-    route: "/communities/lockedInformation",
-    icon: <Office size="12px" />,
-    component: <CommunityLockedInformation />,
-    noCollapse: true,
-    permission: ['LOCAL_MEMBER', 'RESEARCHER', 'PUBLIC_USER', 'ADMIN']
-  },
-  {
-    type: "collapse",
     name: "Researcher",
     key: "researcher",
     route: "/researcher",
@@ -125,16 +105,6 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Test",
-    key: "test",
-    route: "/test",
-    icon: <Shop size="12px" />,
-    component: <PurchaseNFT />,
-    noCollapse: true,
-    permission: ['LOCAL_MEMBER', 'RESEARCHER', 'PUBLIC_USER', 'ADMIN']
-  },
-  {
-    type: "collapse",
     name: "NFT",
     key: "NFT",
     route: "/NFT",
@@ -142,6 +112,39 @@ const routes = [
     component: <CreateNFT />,
     noCollapse: true,
     permission: ['LOCAL_MEMBER', 'RESEARCHER']
+  },
+  {
+    type: "collapse",
+    name: "Purchase",
+    key: "purchase",
+    route: "/marketplace/item",
+    icon: <Shop size="12px" />,
+    component: <PurchaseNFT />,
+    noCollapse: true,
+    permission: ['LOCAL_MEMBER', 'RESEARCHER', 'PUBLIC_USER', 'ADMIN'],
+    sidebarVisible: false
+  },
+  {
+    type: "collapse",
+    name: "Know More 1",
+    key: "knowMore1",
+    route: "/communities/about",
+    icon: <Office size="12px" />,
+    component: <CommunityMoreInformation />,
+    noCollapse: true,
+    permission: ['LOCAL_MEMBER', 'RESEARCHER', 'PUBLIC_USER', 'ADMIN'],
+    sidebarVisible: false
+  },
+  {
+    type: "collapse",
+    name: "Know More 2",
+    key: "knowMore2",
+    route: "/communities/lockedInformation",
+    icon: <Office size="12px" />,
+    component: <CommunityLockedInformation />,
+    noCollapse: true,
+    permission: ['LOCAL_MEMBER', 'RESEARCHER', 'PUBLIC_USER', 'ADMIN'],
+    sidebarVisible: false
   }
 ]
 // .filter(obj => {
