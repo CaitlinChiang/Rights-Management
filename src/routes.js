@@ -18,7 +18,7 @@ import Cube from "./components/Icons/Cube"
 import Shop from './components/Icons/Shop'
 
 const user = {
-  permission: 'ADMIN', // LOCAL_MEMBER, RESEARCHER, PUBLIC_USER, ADMIN
+  permission: 'LOCAL_MEMBER', // PUBLIC_USER, LOCAL_MEMBER, RESEARCHER, ADMIN
 }
 
 const routes = [
